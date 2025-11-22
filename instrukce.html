@@ -3,9 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Instrukce</title>
+    <style>
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-    <h1></h1>
-    <p>Zde mohou být vaše instrukce…</p>
+    <h1>Joupííí</h1>
+
+    <button onclick="showText('Večeře je připravena, užij si ji! 🍝')">Večeře</button>
+    <button onclick="showText('Nezapomeň si plavky, čeká tě bazén! 🩱')">Plavky</button>
+    <button onclick="showText('Čas na surfování, připrav prkno! 🏄‍♂️')">Surf</button>
+
+    <div id="output"></div>
+
+    <script>
+        function showText(text) {
+            document.getElementById('output').innerText = text;
+        }
+    </script>
 </body>
 </html>
