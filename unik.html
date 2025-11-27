@@ -31,27 +31,63 @@
 
         p {
             font-size: 1.2rem;
-            white-space: pre-wrap; /* zachová formátování textu */
+            white-space: pre-wrap;
+        }
+
+        button {
+            margin-top: 1px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            background-color: #e06c75;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #d65560;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Petříkovo Vánoční tajemství</h1>
-        <p>Hello bobino,
 
-vítej v mé únikové hře. Po dobu následujících 24 dní tě čeká dobrodružství plné hádanek a šifer. Každý den objevíš novou indicii, která tě posune o krok blíž k vyřešení celé záhady.
+        <p id="text">
+Hello bobino,
 
-Měj na paměti jedno důležité pravidlo: nic nevyhazuj, vše má svůj důvod a každý detail má svůj smysl. Tvá trpělivost a zvědavost budou tvými nejlepšími spojenci.
+vítej v mé únikové hře. Po dobu následujících 24 dní tě čeká dobrodružství plné hádanek a šifer. Každý den objevíš novou indicii, která tě posune o krok blíž k vyřešení celé hry. Pokud indicie bude mít fialovou barvu, dovede tě k něčemu dalšímu.
 
-Přeji ti úspěšný únik a především spoustu zábavy.
-Kdyby sis s něčím nevěděla rady, můžeš se samozřejmě ozvat — jen mysli na to, že za určitou pomoc budou platit poplatky (viz níže):
-1.masáž
-2.dáš si se mnou drink
-3.uvaříš mi něco dobrého
-4.nachystáš nám venek
+Měj na paměti jedno důležité pravidlo: nic nevyhazuj, vše má svůj důvod a každý detail má svůj smysl.
 
-Hra začíná… Hodně štěstí!</p>
+Přeji ti úspěšný únik prdíků a především spoustu zábavy.
+Kdyby sis s něčím nevěděla rady, můžeš se samozřejmě ozvat,jen mysli na to, že za určitou pomoc budou platit poplatky (viz níže):
+1. masáž
+2. zajdem na drink
+3. uvaříš mi něco dobrého
+4. nachystáš nám venek
+
+Hra začíná… Hodně štěstí!
+
+
+        </p>
+
+        <button onclick="opravit()">Opravit poplatky</button>
     </div>
+
+    <script>
+        function opravit() {
+            const textElement = document.getElementById("text");
+            let text = textElement.innerHTML;
+
+            text = text.replace(/1\..*/g, "1. nový tanga &#x1F60E;")
+                       .replace(/2\..*/g, "2. nový tanga &#x1F60E;")
+                       .replace(/3\..*/g, "3. nový tanga &#x1F60E;")
+                       .replace(/4\..*/g, "4. nový tanga &#x1F60E;");
+
+            textElement.innerHTML = text;
+        }
+    </script>
 </body>
 </html>
